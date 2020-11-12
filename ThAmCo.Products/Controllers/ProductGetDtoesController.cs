@@ -16,7 +16,7 @@ namespace ThAmCo.Products.Controllers
     {
         private readonly ProductsContext _context;
 
-        //Testing GitHub Connection
+        //Testing Development Branch
 
         public ProductGetDtoesController(ProductsContext context)
         {
