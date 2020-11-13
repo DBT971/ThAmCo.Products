@@ -14,6 +14,8 @@ namespace ThAmCo.Products.Data
         {
         }
 
-        public DbSet<ThAmCo.Products.Models.ProductGetDto> ProductGetDto { get; set; }
+        public DbSet<Products> Products { get; set; }
+
+        //public DbSet<ThAmCo.Products.Models.ProductGetDto> ProductGetDto { get; set; }
     }
 }
