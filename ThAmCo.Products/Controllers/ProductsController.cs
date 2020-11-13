@@ -14,9 +14,9 @@ namespace ThAmCo.Products.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly ProductsDBContext _context;
+        private readonly ProductsContext _context;
 
-        public ProductsController(ProductsDBContext context)
+        public ProductsController(ProductsContext context)
         {
             _context = context;
         }
@@ -25,7 +25,7 @@ namespace ThAmCo.Products.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductGetDto>>> GetProducts()
         {
-            var products = await _context.Products.ToListAsync();
+            List<Data.Products> products = await _context.Products.ToListAsync();
             if(products == null)
             {
                 return NotFound();
