@@ -29,7 +29,7 @@ namespace ThAmCo.Products
         {
             services.AddControllers();
 
-            services.AddDbContext<ProductsContext>(options =>
+            services.AddDbContext<ProductsDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ProductsContext")));
         }
 
