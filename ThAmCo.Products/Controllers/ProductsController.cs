@@ -10,22 +10,22 @@ using ThAmCo.Products.Models;
 
 namespace ThAmCo.Products.Controllers
 {
-    [Route("/[controller]")]
+    [Route("/api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly ProductsContext _context;
+        private readonly ProductsDbContext _context;
 
-        public ProductsController(ProductsContext context)
+        public ProductsController(ProductsDbContext context)
         {
             _context = context;
         }
 
-        // GET: Products
+        // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductGetDto>>> GetProducts()
         {
-            List<Data.Products> products = await _context.Products.ToListAsync();
+           var products = await _context.Products.ToListAsync();
             if(products == null)
             {
                 return NotFound();
@@ -33,7 +33,7 @@ namespace ThAmCo.Products.Controllers
             return Ok(products);
         }
 
-        // GET: Products/5
+        // GET: api/Products/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductGetDto>> GetProducts(int id)
         {
