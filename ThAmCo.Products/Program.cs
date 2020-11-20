@@ -24,6 +24,7 @@ namespace ThAmCo.Products
                 context.Database.EnsureDeleted();
                 context.Database.Migrate();
             }
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
