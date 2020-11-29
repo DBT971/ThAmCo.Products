@@ -6,7 +6,7 @@ namespace ThAmCo.Products.Data
 {
     public class Products
     {
-        [Key, MinLength(5), MaxLength(5)]
+        [Key]
         public int ID { get; set; }
 
         [Required]
@@ -23,6 +23,7 @@ namespace ThAmCo.Products.Data
 
         [Required]
         public bool Available { get; set; }
+
 
     }
 }
