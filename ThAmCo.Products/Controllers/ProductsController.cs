@@ -47,6 +47,18 @@ namespace ThAmCo.Products.Controllers
             return Ok(ProductGetDto.FromModel(products));
         }
 
+        //GET: api/Products/Create
+        [HttpGet]
+        public async Task<IActionResult> CreateProduct([FromBody] ProductPostDto product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var available = await _context.Products.Include(a => a.Product).FirstOrDefaultAsync(await => a.Id == )
+        }
+
         // PUT: api/Products/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
